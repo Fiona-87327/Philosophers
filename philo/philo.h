@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/17 13:38:10 by jiyawang          #+#    #+#             */
+/*   Updated: 2025/11/17 13:46:33 by jiyawang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PHILO_H
+# define PHILO_H
+
+# include <pthread.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/time.h>
+# include <unistd.h>
+
+typedef struct s_philo
+{
+	pthread_t		thread_id;
+	int				ph_id;
+	int				meals_eaten;
+	size_t			last_meal_time;
+	size_t			time_to_die;
+	size_t			time_to_eat;
+	size_t			time_to_sleep;
+	size_t			start_time;
+	int				number_of_philosophers;
+	int				*dead;
+	int				num_times_to_eat;
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;
+	pthread_mutex_t	*print_lock;
+	pthread_mutex_t	*dead_lock;
+	pthread_mutex_t	*meal_time_lock;
+}					t_philo;
+
+typedef struct s_program
+{
+	int				dead;
+	pthread_mutex_t	dead_lock;
+	pthread_mutex_t	print_lock;
+	pthread_mutex_t	meal_lock;
+	t_philo			*philos;
+}					t_program;
+
+#endif
