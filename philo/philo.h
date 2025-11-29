@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:38:10 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/20 15:45:18 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:52:00 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_philo
 {
 	pthread_t		thread_id;
 	int				ph_id;
+	int				eating;
 	int				meals_eaten;
 	size_t			last_meal_time;
 	size_t			time_to_die;
@@ -41,7 +42,7 @@ typedef struct s_philo
 
 typedef struct s_program
 {
-	int				dead;
+	int				dead_flag;
 	pthread_mutex_t	dead_lock;
 	pthread_mutex_t	print_lock;
 	pthread_mutex_t	meal_lock;
