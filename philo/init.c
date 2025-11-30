@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:28:23 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 14:03:44 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:12:13 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	input_init(t_philo *philo, char **argv)
 		philo->num_times_to_eat = -1;
 }
 
-void	philo_init(t_philo *philo, t_program *program, pthread_mutex_t *forks,
+void	init_philo(t_philo *philo, t_program *program, pthread_mutex_t *forks,
 		char **argv)
 {
 	int	i;
@@ -49,4 +49,25 @@ void	philo_init(t_philo *philo, t_program *program, pthread_mutex_t *forks,
 			philo[i].right_fork = &forks[i - 1];
 		i++;
 	}
+}
+
+void	init_forks(pthread_mutex_t *forks, int num_philosophers)
+{
+	int	i;
+
+	i = 0;
+	while (i < num_philosophers)
+	{
+		pthread_mutex_init(&forks[i], NULL);
+		i++;
+	}
+}
+
+void	init_program(t_program *program, t_philo *philos)
+{
+	program->dead_flag = 0;
+	program->philos = philos;
+	pthread_mutex_init(&program->print_lock, NULL);
+	pthread_mutex_init(&program->dead_lock, NULL);
+	pthread_mutex_init(&program->meal_lock, NULL);
 }

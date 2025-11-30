@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:09:03 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/24 17:05:52 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:08:21 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,18 @@ void	eat_action(t_philo *philo)
 {
 	pthread_mutex_lock(philo->left_fork);
 	print_action(philo, "has taken a fork🍴");
+	if (philo->number_of_philosophers == 1)
+	{
+		ft_usleep(philo->time_to_die);
+		pthread_mutex_unlock(philo->left_fork);
+		return ;
+	}
 	pthread_mutex_lock(philo->right_fork);
 	print_action(philo, "has taken a fork🍴");
 	pthread_mutex_lock(philo->meal_time_lock);
 	philo->last_meal_time = get_time_in_ms();
 	pthread_mutex_unlock(philo->meal_time_lock);
-	print_action(philo, "is eating🍖");
+	print_action(philo, "is eating🍕");
 	ft_usleep(philo->time_to_eat);
 	philo->meals_eaten++;
 	pthread_mutex_unlock(philo->right_fork);
