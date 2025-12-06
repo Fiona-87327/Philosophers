@@ -4,12 +4,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = aktion.c init.c utils.c philo.c monitor.c thread.c
 OBJS = $(SRCS:.c=.o)
-INCLUDES = -I./include
 RM = rm -f
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
+	$(CC) $(CFLAGS) -c $< -o $@
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
