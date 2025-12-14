@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:52:08 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 18:42:35 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:31:49 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-void	dstroy_all(char *philo, t_program *program, pthread_mutex_t *forks)
+void	dstroy_all(char *error_msg, t_program *program, pthread_mutex_t *forks)
 {
 	int	i;
 
 	i = 0;
-	if (philo)
+	if (error_msg)
 	{
-		write(2, philo, ft_strlen(philo));
+		write(2, error_msg, ft_strlen(error_msg));
 		write(2, "\n", 1);
 	}
 	pthread_mutex_destroy(&program->print_lock);

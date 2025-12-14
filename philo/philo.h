@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:38:10 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/06 19:38:09 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:32:02 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int					thread_create(t_program *program, pthread_mutex_t *forks);
 size_t				get_time_in_ms(void);
 void				ft_usleep(size_t ms);
 int					ft_atoi(const char *str);
-void				dstroy_all(char *philo, t_program *program,
+void				dstroy_all(char *error_msg, t_program *program,
 						pthread_mutex_t *forks);
 
 #endif
