@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:09:03 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/17 21:31:58 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/17 21:33:38 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ void	eat_action(t_philo *philo)
 // 	pthread_mutex_unlock(philo->print_lock);
 // }
 
-void die_action(t_philo *philo)
+void	die_action(t_philo *philo)
 {
-    pthread_mutex_lock(philo->dead_lock);
-    *(philo->dead) = 1;
-    pthread_mutex_unlock(philo->dead_lock);
+	pthread_mutex_lock(philo->dead_lock);
+	*(philo->dead) = 1;
+	pthread_mutex_unlock(philo->dead_lock);
 }
