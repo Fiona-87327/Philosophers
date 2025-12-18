@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:09:03 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/17 21:33:38 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/18 11:54:27 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,6 @@ void	eat_action(t_philo *philo)
 	pthread_mutex_unlock(philo->right_fork);
 	pthread_mutex_unlock(philo->left_fork);
 }
-
-// void	die_action(t_philo *philo)
-// {
-// 	size_t	timestamp;
-
-// 	pthread_mutex_lock(philo->dead_lock);
-// 	*(philo->dead) = 1;
-// 	pthread_mutex_unlock(philo->dead_lock);
-// 	pthread_mutex_lock(philo->print_lock);
-// 	timestamp = get_time_in_ms() - philo->start_time;
-// 	printf("%zu %d died", timestamp, philo->ph_id + 1);
-// 	pthread_mutex_unlock(philo->print_lock);
-// }
 
 void	die_action(t_philo *philo)
 {
