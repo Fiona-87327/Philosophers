@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:38:10 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/17 21:22:06 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/19 08:56:33 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
-
-# define NC "\e[0m"
-# define YELLOW "\e[1;33m"
 
 typedef struct s_philo
 {
