@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:28:23 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 19:12:13 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:47:08 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	input_init(t_philo *philo, char **argv)
 {
+	philo->number_of_philosophers = ft_atoi(argv[1]);
 	philo->time_to_die = (size_t)ft_atoi(argv[2]);
 	philo->time_to_eat = (size_t)ft_atoi(argv[3]);
 	philo->time_to_sleep = (size_t)ft_atoi(argv[4]);
-	philo->number_of_philosophers = ft_atoi(argv[1]);
 	if (argv[5])
 		philo->num_times_to_eat = ft_atoi(argv[5]);
 	else
