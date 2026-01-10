@@ -17,3 +17,4 @@ valgrind-out.txt
 *.valgrind
 *.42
 a.out
+philo
