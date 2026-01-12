@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 14:05:43 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 19:55:10 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/12 12:06:04 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,14 @@ int	main(int argc, char **argv)
 	t_program		program;
 	t_philo			philos[200];
 	pthread_mutex_t	forks[200];
+	int 			ph_num;
+	
+	ph_num = ft_atoi(argv[1]);
+	if (ph_num > 200)
+	{
+		printf("Error: Too many philosophers (max 200).\n");
+		return (1);
+	}
 
 	if (argc < 5 || argc > 6)
 	{
