@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:30:14 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/17 21:30:10 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:13:48 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	if_all_ate(t_philo *philo)
 	if (all_ate == philo[0].number_of_philosophers)
 	{
 		pthread_mutex_lock(philo[0].dead_lock);
-		*philo->dead = 1;
+		*philo[0].dead = 1;
 		pthread_mutex_unlock(philo[0].dead_lock);
 		return (1);
 	}
