@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:30:14 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/01/13 14:13:48 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/13 20:45:00 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,19 @@ int	if_all_ate(t_philo *philo)
 	return (0);
 }
 
-void	*monitor(void *arg)
+void *monitor(void *arg)
 {
-	t_philo	*philo;
-
-	philo = (t_philo *)arg;
-	while (1)
-	{
-		if (if_philosophers_dead(philo) == 1)
-			break ;
-		if (if_all_ate(philo) == 1)
-			break ;
-	}
-	return (arg);
+    t_philo *philo;
+    
+    philo = (t_philo *)arg;
+    while (1)
+    {
+        if (if_philosophers_dead(philo) == 1)
+            break;
+        if (if_all_ate(philo) == 1)
+            break;
+        usleep(1000);
+    }
+    return (arg);
 }
+
