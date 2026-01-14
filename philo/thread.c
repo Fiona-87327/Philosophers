@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:30:59 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/01/14 12:31:03 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:52:16 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	*philo_thread(void *arg)
 		eat_action(philo);
 		sleep_action(philo);
 		think_action(philo);
+		if (philo->number_of_philosophers % 2 != 0)
+			ft_usleep(100);
 	}
 	return (arg);
 }
